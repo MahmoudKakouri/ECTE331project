@@ -25,7 +25,7 @@ public class Final {
 			}
 
 			synchronized (d) {
-				while (!d.GoB1) {
+				while (!d.GoA2) {
 					try {
 						d.wait();
 					} catch (InterruptedException e) {
@@ -38,7 +38,7 @@ public class Final {
 			}
 
 			synchronized (d) {
-				while (!d.GoB2) {
+				while (!d.GoA3) {
 					try {
 						d.wait();
 					} 
@@ -120,10 +120,10 @@ public class Final {
 		}
 
 		System.out.println("The final value of A1 is " + d.A1);
-		System.out.println("The final value of A2 is " + d.A2);
-		System.out.println("The final value of A3 is " + d.A3);
 		System.out.println("The final value of B1 is " + d.B1);
 		System.out.println("The final value of B2 is " + d.B2);
+		System.out.println("The final value of A2 is " + d.A2);
 		System.out.println("The final value of B3 is " + d.B3);
+		System.out.println("The final value of A3 is " + d.A3);
 	}
 }
