@@ -17,7 +17,7 @@ public class Final {
 
 		@Override
 		public void run() {
-
+			// A synchronized block for each of A1 A2 A3
 			synchronized (d) {
 				d.A1=100*(100+1)/2;
 				d.GoB1 = true;
@@ -47,8 +47,6 @@ public class Final {
 					}
 				}
 				d.A3=d.B3+(600*(600+1)/2);
-				d.GoB2 = true;
-				d.notify();
 			}
 		}
 	}
