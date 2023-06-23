@@ -36,7 +36,7 @@ public class PrjectQuestion1Multi {
             BufferedImage eqImage = histogramEqualizationMultiThread(grayscaleImage);
 
             // Display equalized image 
-            displayImage(eqImage, "Equalized Image");
+            displayImage(eqImage, "Equalized Image MultiThread");
             long endTime = System.currentTimeMillis();
             long executionTime = endTime - startTime;
             System.out.println("Execution time: " + executionTime + " milliseconds");
