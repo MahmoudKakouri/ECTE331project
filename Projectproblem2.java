@@ -104,7 +104,10 @@ public class Final {
 
 	public static void main(String[] args) {
 		Data d = new Data();
-
+		int i=0;
+        int num_iter=65000;        
+        while(i++<num_iter)
+        {
 		Thread2 t1 = new Thread2(d);
 		Thread t2 = new Thread(new Thread1(d));
 
@@ -117,7 +120,7 @@ public class Final {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-
+        }
 		System.out.println("The final value of A1 is " + d.A1);
 		System.out.println("The final value of B1 is " + d.B1);
 		System.out.println("The final value of B2 is " + d.B2);
