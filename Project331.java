@@ -30,7 +30,7 @@ public class Project331 {
 			// Display grayscale image in a frame
 			displayImage(grayscaleImage, "Grayscale Image");
 			//Display EQ image in a fram
-			displayImage(EQimg, "EQ Image");
+			displayImage(EQimg, "Equalized Image Single Thread");
 			long endTime = System.currentTimeMillis();
 			long executionTime = endTime - startTime;
 			System.out.println("Execution time: " + executionTime + " milliseconds");
