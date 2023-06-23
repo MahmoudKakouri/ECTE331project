@@ -21,10 +21,11 @@ public class Final {
 			synchronized (d) {
 				d.A1=100*(100+1)/2;
 				d.GoB1 = true;
-				d.notify();
+				d.notify(); //notifying B1 to start
 			}
 
 			synchronized (d) {
+				//waiting to be notified 
 				while (!d.GoA2) {
 					try {
 						d.wait();
@@ -34,7 +35,7 @@ public class Final {
 				}
 				d.A2 = d.B2 + (400 * (400 + 1) / 2);
 				d.GoB3 = true;
-				d.notify();
+				d.notify(); //Notifying B3 to start
 			}
 
 			synchronized (d) {
@@ -70,7 +71,7 @@ public class Final {
 				}
 				d.B1 = d.A1 + (200*(200+1)/2);
 				d.GoB2 = true;
-				d.notify();
+				d.notify(); //Notifying B2 to start
 			}
 
 			synchronized (d) {
@@ -83,7 +84,7 @@ public class Final {
 				}
 				d.B2 = 300*(300+1)/2;
 				d.GoA2 = true;
-				d.notify();
+				d.notify();//Notifying A2 to start
 			}
 
 			synchronized (d) {
@@ -96,7 +97,7 @@ public class Final {
 				}
 				d.B3 = d.A2+(500*(500+1)/2);
 				d.GoA3 = true;
-				d.notify();
+				d.notify(); //Notifying A3 to start
 			}
 		}
 	}
