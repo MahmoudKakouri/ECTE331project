@@ -15,6 +15,7 @@ public class Project331 {
 
 	public static void main(String[] args) {
 		try {
+			long startTime = System.currentTimeMillis();
 			// Reading original image
 			BufferedImage originalImage = ImageIO.read(new File("C:\\Users\\vm7mo\\Downloads\\331project\\Rain_Tree.jpg"));
 
@@ -28,13 +29,18 @@ public class Project331 {
 
 			// Display grayscale image in a frame
 			displayImage(grayscaleImage, "Grayscale Image");
-
+			//Display EQ image in a fram
 			displayImage(EQimg, "EQ Image");
+			long endTime = System.currentTimeMillis();
+			long executionTime = endTime - startTime;
+			System.out.println("Execution time: " + executionTime + " milliseconds");
+
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		
 	}
-
+	// Function for grayscale conversion
 	public static BufferedImage convertToGrayscale(BufferedImage originalImage) {
 		int width = originalImage.getWidth();
 		int height = originalImage.getHeight();
@@ -46,7 +52,7 @@ public class Project331 {
 
 		return grayscaleImage;
 	}
-
+	// Function to display images
 	static void displayImage(BufferedImage image, String title) {
 		JFrame frame = new JFrame(title);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -57,7 +63,7 @@ public class Project331 {
 		frame.pack();
 		frame.setVisible(true);
 	}
-
+// Function for the Image panel
 	public static class ImagePanel extends JPanel {
 
 		private BufferedImage image;
@@ -77,6 +83,7 @@ public class Project331 {
 			return new Dimension(image.getWidth(), image.getHeight());
 		}
 	}
+	//Function to calculate the equalization histogram
 	public static BufferedImage histogramEqualization( BufferedImage grayscaleImage) throws IOException{
 		int[] histogram = new int[L+1];
 		int[] cumulativeHist = new int[L+1];
